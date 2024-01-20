@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="countBean"
+            type="com.example.flutter_mix_android.bean.CountBean" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFEFD5"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Android原生页面"
+            android:textAllCaps="false"
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`点击次数：`+String.valueOf(countBean.curNum),default=`点击次数：0`}"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginRight="3dp"
+                android:text="+1" />
+
+            <Button
+                android:id="@+id/android_send_flutter_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发送给Flutter端"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`获取Flutter页面点击次数：`+String.valueOf(countBean.getFlutterNum),default=`获取Flutter页面点击次数：0`}"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/android_get_flutter_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="获取Flutter端数据"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{`接收Flutter端发送的点击次数：`+String.valueOf(countBean.flutterNum),default=`接收Flutter端发送的点击次数：0`}"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</layout>
