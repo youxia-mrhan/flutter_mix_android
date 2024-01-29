@@ -211,9 +211,6 @@ class ComputeLayoutPlatform(
         return this
     }
 
-    override fun dispose() {
-        // 解除绑定
-        mChannel.setMethodCallHandler(null)
-    }
+    override fun dispose() {}
 
 }
